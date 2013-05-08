@@ -1,5 +1,5 @@
 set :branch, "master"
-set :repository,  "git@github.com:shamh/test"
+set :repository,  "git@github.com:shamh/test.git"
 
 role :web, "cidev.gottaparkstaging.com"
 role :app, "cidev.gottaparkstaging.com"

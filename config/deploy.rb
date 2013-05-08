@@ -2,8 +2,8 @@ require 'capistrano/ext/multistage'
 set :stages, %w(production staging development)
 set :default_stage, "staging"
 
-set :repository,  "git@github.com:shamh/test"
-set :scm, :git
+set :repository,  "git@github.com:shamh/test.git"
+set :scm, :git  
 set :application, "test"
 
 role :web, "cidev.gottaparkstaging.com"                          # Your HTTP server, Apache/etc
@@ -26,7 +26,7 @@ namespace :deploy do
   task :start do ; end
   task :stop do ; end
   task :restart, :roles => :app, :except => { :no_release => true } do
-    sudo "/usr/sbin/apache2ctl graceful" # needs to be exactly in this format - see visudo
+    sudo "/usr/sbin/apachectl graceful" # needs to be exactly in this format - see visudo
   end
 end
 
